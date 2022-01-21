@@ -1,10 +1,10 @@
 ## Project Name
 
-This is a little description about your project.
+A fun kickoff project for the hatchways solo sprint.
 
 **Tech Stack:** MongoDB, Express.js, React.js, Node.js, Typescript
 
-**Contributors**: [Hatchways](https://github.com/hatchways) (replace)
+**Contributors**: [Dennis J](https://github.com/denjj)
 
 ---
 
@@ -20,6 +20,7 @@ This is a little description about your project.
 2. Run `npm install` to install packages
 3. Create your environment variable (.env) file
 4. Run `npm run dev` to start the server
+5. (Optional) Run `npm test` to run tests
 
 ---
 
