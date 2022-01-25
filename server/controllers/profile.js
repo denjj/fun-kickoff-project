@@ -1,11 +1,17 @@
 const Profile = require("../models/Profile");
 const asyncHandler = require("express-async-handler");
 
+// @route GET /profiles/
+// @desc Returns a list of all profiles
+// @access Public
 exports.getAllProfiles = asyncHandler(async (req, res, next) => {
   const profiles = await Profile.find({});
   res.status(200).json(profiles);
 });
 
+// @route GET /profiles/:id
+// @desc Given an ID, return profile with that ID
+// @access Public
 exports.getProfile = asyncHandler(async (req, res, next) => {
   try {
     const profile = await Profile.findById(req.params.id)
@@ -17,6 +23,9 @@ exports.getProfile = asyncHandler(async (req, res, next) => {
   }
 });
 
+// @route POST /profiles/create
+// @desc  Given parameters passed in, create a profile.
+// @access Private
 exports.createProfile = asyncHandler(async (req, res, next) => {
   const profile = new Profile({ user: req.user._id, ...req.body });
 
@@ -29,6 +38,9 @@ exports.createProfile = asyncHandler(async (req, res, next) => {
   }
 });
 
+// @route PUT /profiles/update/:id
+// @desc Given an ID and new parameters, update the profile
+// @access Private
 exports.updateProfile = asyncHandler(async (req, res, next) => {
   Profile.findOneAndUpdate(
     { _id: req.params.id },
